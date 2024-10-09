@@ -1,5 +1,6 @@
 const getCurrentIndiaTime = async (req, res) => {
   try {
+    const toolCallId = req.body.toolCallId;
     // Create a new Date object
     const now = new Date();
 
@@ -20,8 +21,13 @@ const getCurrentIndiaTime = async (req, res) => {
 
     const date_now = `${day}-${month}-${year}`;
     const time_now = `${hours}:${minutes}:${seconds}`;
-    
-    return res.status(200).json({ Data: { date_now, time_now } });
+
+    return res.status(200).json({ "results": [
+        {
+            toolCallId,
+            "result": { date_now, time_now }
+        }
+    ] });
   } catch (error) {
     return res.status(200).json({ msg: "Failed to send date", error });
   }

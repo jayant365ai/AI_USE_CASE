@@ -4,6 +4,6 @@ import dateConroller from "../controllers/dateContoller.js";
 const dateRoute = express.Router();
 
 dateRoute
-  .get("/now", dateConroller.getCurrentIndiaTime)
+  .post("/now", dateConroller.getCurrentIndiaTime)
 
 export default dateRoute;
