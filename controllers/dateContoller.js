@@ -1,7 +1,7 @@
 const getCurrentIndiaTime = async (req, res) => {
   try {
     const toolCallId = req.body.toolCallId;
-    // Create a new Date object
+    console.log(req.body);    // Create a new Date object
     const now = new Date();
 
     // Convert the time to India's time zone (UTC +5:30)
