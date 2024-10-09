@@ -18,9 +18,10 @@ const getCurrentIndiaTime = async (req, res) => {
     const minutes = String(indiaTime.getMinutes()).padStart(2, "0");
     const seconds = String(indiaTime.getSeconds()).padStart(2, "0");
 
-    const date = `${day}-${month}-${year}`;
-    const time = `${hours}:${minutes}:${seconds}`;
-    return res.status(200).json({ Data: { date, time } });
+    const date_now = `${day}-${month}-${year}`;
+    const time_now = `${hours}:${minutes}:${seconds}`;
+    
+    return res.status(200).json({ Data: { date_now, time_now } });
   } catch (error) {
     return res.status(200).json({ msg: "Failed to send date", error });
   }
