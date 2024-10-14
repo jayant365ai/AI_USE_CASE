@@ -6,7 +6,7 @@ const getCurrentIndiaTime = async (req, res) => {
 
     // Convert the time to India's time zone (UTC +5:30)
     const indiaOffset = 5.5 * 60; // IST offset in minutes
-    const usOffset = -5 * 60;
+    const usOffset = -4 * 60;
     const utcOffset = now.getTimezoneOffset(); // Get the UTC offset in minutes
     const indiaTime = new Date(
       now.getTime() + (usOffset + utcOffset) * 60000
