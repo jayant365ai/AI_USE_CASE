@@ -30,4 +30,4 @@ router.get("/hello", (req, res) => res.send("Hello World!"));
 app.use("/api/", router);
 app.use("/api/date", dateRoute);
 
-module.exports.handler = serverless(app);
+export default serverless(app);
