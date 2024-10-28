@@ -25,7 +25,7 @@ app.use(
 
 
 const router = express.Router();
-router.get("/hello", (req, res) => res.send("Hello World!"));
+router.get("/hello", (req, res) => res.json({msg: "Hello World!"}));
 
 app.use("/api/", router);
 app.use("/api/date", dateRoute);
